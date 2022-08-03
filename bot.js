@@ -143,10 +143,10 @@ const checkForUserInVoice = () => {
           play(connection, audioPlayer);
         }
       });
-
       connection.receiver.speaking.on("start", (userId) => {
         isTalking = true;
 
+        if (userId !== target) return;
         play(connection, audioPlayer);
       });
 
